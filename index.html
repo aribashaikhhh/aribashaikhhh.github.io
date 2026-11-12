@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ariba Shaikh — Portfolio</title>
+  <meta name="description" content="Ariba Shaikh — cybersecurity student, campus leader, and builder. A portfolio styled as a retro desktop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ICON SPRITE: every icon is drawn once here and reused with <use href="#id"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- shared gradients for the glossy XP-style icons -->
+      <linearGradient id="gFolderBack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d975"/><stop offset="1" stop-color="#d9a52a"/></linearGradient>
+      <linearGradient id="gFolderFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3b5"/><stop offset="0.45" stop-color="#f8d461"/><stop offset="1" stop-color="#e6ad34"/></linearGradient>
+      <linearGradient id="gBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb2ff"/><stop offset="1" stop-color="#1c56d6"/></linearGradient>
+      <linearGradient id="gRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a6b"/><stop offset="1" stop-color="#c41a1a"/></linearGradient>
+      <linearGradient id="gBrown" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9814a"/><stop offset="1" stop-color="#7a3d16"/></linearGradient>
+      <linearGradient id="gBeige" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf9f2"/><stop offset="1" stop-color="#cfc9b8"/></linearGradient>
+      <linearGradient id="gScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a6be0"/><stop offset="1" stop-color="#a9d3ff"/></linearGradient>
+      <linearGradient id="gPanel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c8dcf6"/></linearGradient>
+      <linearGradient id="gEnvelope" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d6e5fb"/></linearGradient>
+      <linearGradient id="gSilver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2f2f2"/><stop offset="1" stop-color="#8e8e8e"/></linearGradient>
+      <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe680"/><stop offset="1" stop-color="#d4a017"/></linearGradient>
+
+      <!-- base folder shape, reused by every folder icon -->
+      <g id="folder-shape">
+        <path d="M4 12a3 3 0 0 1 3-3h11l4 4h19a3 3 0 0 1 3 3v22a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3z" fill="url(#gFolderBack)" stroke="#b07d12"/>
+        <rect x="9" y="14" width="30" height="16" rx="1" fill="#fff" stroke="#cfcfcf"/>
+        <path d="M3 21a3 3 0 0 1 3-3h36a3 3 0 0 1 3 3l-1.6 17a3 3 0 0 1-3 3H7.6a3 3 0 0 1-3-3z" fill="url(#gFolderFront)" stroke="#c18a17"/>
+        <path d="M6.5 19.6h35" stroke="#fffbe0" stroke-width="1.2" opacity="0.9"/>
+      </g>
+
+      <!-- SOFTWARE: My Computer (Welcome) -->
+      <symbol id="i-welcome" viewBox="0 0 48 48">
+        <rect x="5" y="5" width="38" height="29" rx="3" fill="url(#gBeige)" stroke="#8a8578"/>
+        <rect x="9" y="9" width="30" height="21" rx="1" fill="url(#gScreen)" stroke="#5a5a5a" stroke-width="0.8"/>
+        <path d="M9 26c7-5 14-5 30-1v5H9z" fill="#5fb12f"/>
+        <path d="M9 28c9-3 18-2 30 0v2H9z" fill="#3f8f22"/>
+        <path d="M19 34h10l2 4H17z" fill="#bdb7a6"/>
+        <rect x="11" y="38" width="26" height="5" rx="2" fill="url(#gBeige)" stroke="#8a8578"/>
+        <circle cx="38" cy="31.8" r="0.9" fill="#3fbf3f"/>
+      </symbol>
+
+      <!-- SOFTWARE: Notepad (About) -->
+      <symbol id="i-about" viewBox="0 0 48 48">
+        <rect x="9" y="7" width="30" height="36" rx="2" fill="#fff" stroke="#7d93b8"/>
+        <rect x="9" y="5" width="30" height="8" rx="2" fill="url(#gBlue)" stroke="#1a3f99"/>
+        <g fill="#e8eefb" stroke="#555" stroke-width="0.8">
+          <circle cx="15" cy="9" r="1.6"/><circle cx="21" cy="9" r="1.6"/><circle cx="27" cy="9" r="1.6"/><circle cx="33" cy="9" r="1.6"/>
+        </g>
+        <g stroke="#9fbbe8" stroke-width="1.2">
+          <path d="M13 18h22M13 22h22M13 26h22M13 30h22M13 34h22M13 38h13"/>
+        </g>
+        <path d="M36 25l7-7 3 3-7 7-4 1z" fill="#ffcc33" stroke="#8a6d00" stroke-width="0.8"/>
+        <path d="M43 18l3 3 1-1a1.5 1.5 0 0 0 0-2l-1-1a1.5 1.5 0 0 0-2 0z" fill="#e57373" stroke="#8a2d2d" stroke-width="0.8"/>
+      </symbol>
+
+      <!-- FOLDER: Experience (briefcase badge) -->
+      <symbol id="i-exp" viewBox="0 0 48 48">
+        <use href="#folder-shape"/>
+        <path d="M31.5 29v-2.5h7V29" stroke="#4a230b" stroke-width="1.6" fill="none"/>
+        <rect x="27" y="29" width="16" height="12" rx="2" fill="url(#gBrown)" stroke="#4a230b"/>
+        <path d="M27 34h16" stroke="#4a230b" stroke-width="0.8"/>
+        <rect x="33.5" y="32.5" width="3" height="3" rx="0.5" fill="url(#gGold)" stroke="#7a5a00" stroke-width="0.5"/>
+      </symbol>
+
+      <!-- FOLDER: Projects (code badge) -->
+      <symbol id="i-projects" viewBox="0 0 48 48">
+        <use href="#folder-shape"/>
+        <circle cx="36" cy="35" r="8" fill="url(#gBlue)" stroke="#173a8f"/>
+        <path d="M33.5 31.5l-3.5 3.5 3.5 3.5M38.5 31.5l3.5 3.5-3.5 3.5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+
+      <!-- SOFTWARE: Control Panel (Skills) -->
+      <symbol id="i-skills" viewBox="0 0 48 48">
+        <rect x="5" y="7" width="34" height="30" rx="4" fill="url(#gPanel)" stroke="#3a6ea5"/>
+        <g stroke="#7d93b8" stroke-width="2" stroke-linecap="round">
+          <path d="M11 15h22M11 22h22M11 29h22"/>
+        </g>
+        <g stroke="#1a3f99" stroke-width="0.8">
+          <rect x="15" y="12" width="5" height="6" rx="1.5" fill="url(#gBlue)"/>
+          <rect x="25" y="19" width="5" height="6" rx="1.5" fill="url(#gBlue)"/>
+          <rect x="18" y="26" width="5" height="6" rx="1.5" fill="url(#gBlue)"/>
+        </g>
+        <circle cx="36" cy="35" r="7.5" fill="none" stroke="#6e6e6e" stroke-width="4" stroke-dasharray="3 2.9"/>
+        <circle cx="36" cy="35" r="6" fill="url(#gSilver)" stroke="#555" stroke-width="0.8"/>
+        <circle cx="36" cy="35" r="2.2" fill="#fff" stroke="#555" stroke-width="0.8"/>
+      </symbol>
+
+      <!-- FOLDER: Certifications (award badge) -->
+      <symbol id="i-certs" viewBox="0 0 48 48">
+        <use href="#folder-shape"/>
+        <path d="M32 36l-2.5 8 3.5-1.5 2 2.5 1.5-7.5zM40 36l2.5 8-3.5-1.5-2 2.5-1.5-7.5z" fill="#b51414" stroke="#6e0b0b" stroke-width="0.6"/>
+        <circle cx="36" cy="32" r="7" fill="url(#gRed)" stroke="#7a0b0b"/>
+        <circle cx="36" cy="32" r="4" fill="url(#gGold)" stroke="#7a5a00" stroke-width="0.6"/>
+      </symbol>
+
+      <!-- certificate document (used inside the Certifications window) -->
+      <symbol id="i-cert-doc" viewBox="0 0 48 48">
+        <rect x="4" y="9" width="40" height="28" rx="2" fill="#fffbea" stroke="#a88a3a"/>
+        <rect x="7" y="12" width="34" height="22" fill="none" stroke="#d4a017" stroke-width="1"/>
+        <path d="M12 18h18M12 22h14M12 26h16" stroke="#9a9a9a" stroke-width="1.4"/>
+        <path d="M32 33l-2 9 3-1.5 2 2.5 1-8zM39 33l2 9-3-1.5-2 2.5-1-8z" fill="#b51414"/>
+        <circle cx="35.5" cy="30" r="5.5" fill="url(#gRed)" stroke="#7a0b0b"/>
+      </symbol>
+
+      <!-- SOFTWARE: Mail (Contact) -->
+      <symbol id="i-contact" viewBox="0 0 48 48">
+        <rect x="5" y="12" width="38" height="27" rx="2.5" fill="url(#gEnvelope)" stroke="#2c5aa0"/>
+        <path d="M6 13.5l18 14 18-14" stroke="#2c5aa0" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+        <path d="M6 38l14-12M42 38L28 26" stroke="#8fb0dd" stroke-width="1.2"/>
+        <rect x="33" y="15" width="7" height="8" fill="url(#gRed)" stroke="#7a0b0b" stroke-width="0.6"/>
+      </symbol>
+
+      <!-- FILE: Resume PDF -->
+      <symbol id="i-resume" viewBox="0 0 48 48">
+        <path d="M11 4h20l9 9v31H11z" fill="#fff" stroke="#8c8c8c"/>
+        <path d="M31 4v9h9" fill="#e9e9e9" stroke="#8c8c8c" stroke-linejoin="round"/>
+        <path d="M16 15h10M16 34h18M16 38h14" stroke="#b5b5b5" stroke-width="1.4"/>
+        <rect x="6" y="20" width="28" height="11" rx="2" fill="url(#gRed)" stroke="#7a0b0b"/>
+        <text x="20" y="28.6" font-size="8" font-family="Arial, sans-serif" font-weight="bold" fill="#fff" text-anchor="middle">PDF</text>
+      </symbol>
+
+      <symbol id="i-shield" viewBox="0 0 32 32">
+        <path d="M16 3 L27 7 V15 C27 22 22 26 16 29 C10 26 5 22 5 15 V7 Z" fill="#000"/>
+        <path d="M16 5 L25 8.5 V15 C25 21 21 24.5 16 27 C11 24.5 7 21 7 15 V8.5 Z" fill="#1d6fd8"/>
+        <path d="M16 5 V27 C11 24.5 7 21 7 15 V8.5 Z" fill="#4f9bff"/>
+        <rect x="14.5" y="10" width="3" height="11" fill="#fff"/>
+        <rect x="10.5" y="14" width="11" height="3" fill="#fff"/>
+      </symbol>
+      <symbol id="i-spark" viewBox="0 0 32 32">
+        <path d="M16 2 L19 13 L30 16 L19 19 L16 30 L13 19 L2 16 L13 13Z" fill="#000"/>
+        <path d="M16 6 L18 14 L26 16 L18 18 L16 26 L14 18 L6 16 L14 14Z" fill="#b46cff"/>
+        <rect x="24" y="4" width="3" height="3" fill="#ff7ad9"/>
+        <rect x="5" y="25" width="3" height="3" fill="#7fd4ff"/>
+      </symbol>
+      <symbol id="i-note" viewBox="0 0 32 32">
+        <rect x="11" y="5" width="3" height="18" fill="#000"/>
+        <rect x="22" y="5" width="3" height="15" fill="#000"/>
+        <rect x="11" y="5" width="14" height="4" fill="#000"/>
+        <ellipse cx="9" cy="23" rx="5" ry="4" fill="#c2185b" stroke="#000" stroke-width="1"/>
+        <ellipse cx="20" cy="20" rx="5" ry="4" fill="#c2185b" stroke="#000" stroke-width="1"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <main id="desktop">
+
+    <!-- WALLPAPER: sky, clouds, and rolling green hills (XP-style) -->
+    <svg class="wallpaper" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1f5fd1"/>
+          <stop offset="0.45" stop-color="#4f93ea"/>
+          <stop offset="0.75" stop-color="#9cc9f7"/>
+          <stop offset="1" stop-color="#d7ecff"/>
+        </linearGradient>
+        <linearGradient id="hill-back" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#5e9f3a"/>
+          <stop offset="1" stop-color="#2f6e1f"/>
+        </linearGradient>
+        <linearGradient id="hill-front" x1="0" y1="0" x2="0.3" y2="1">
+          <stop offset="0" stop-color="#8fd14f"/>
+          <stop offset="0.35" stop-color="#5fb12f"/>
+          <stop offset="1" stop-color="#2d7a17"/>
+        </linearGradient>
+        <radialGradient id="sun-glow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#fff" stop-opacity="0.35"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
+          <feGaussianBlur stdDeviation="14"/>
+        </filter>
+        <filter id="grass">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9 0.25" numOctaves="2" seed="4"/>
+          <feColorMatrix values="0 0 0 0 0.1  0 0 0 0 0.3  0 0 0 0 0.05  0 0 0 0.18 0"/>
+          <feComposite in2="SourceGraphic" operator="in"/>
+        </filter>
+      </defs>
+
+      <rect width="1600" height="1000" fill="url(#sky)"/>
+      <ellipse cx="1180" cy="230" rx="420" ry="260" fill="url(#sun-glow)"/>
+
+      <!-- clouds -->
+      <g fill="#fff" filter="url(#soft)">
+        <ellipse cx="300" cy="170" rx="210" ry="38" opacity="0.85"/>
+        <ellipse cx="420" cy="150" rx="120" ry="34" opacity="0.9"/>
+        <ellipse cx="980" cy="110" rx="260" ry="30" opacity="0.7"/>
+        <ellipse cx="1330" cy="300" rx="190" ry="36" opacity="0.8"/>
+        <ellipse cx="1450" cy="285" rx="110" ry="28" opacity="0.85"/>
+        <ellipse cx="700" cy="360" rx="170" ry="22" opacity="0.6"/>
+      </g>
+
+      <!-- back hill -->
+      <path d="M0 690 C 260 610, 520 600, 760 650 C 1000 700, 1260 620, 1600 560 L1600 1000 L0 1000 Z" fill="url(#hill-back)"/>
+      <!-- front hill -->
+      <path d="M0 860 C 220 700, 520 610, 860 640 C 1150 665, 1380 760, 1600 820 L1600 1000 L0 1000 Z" fill="url(#hill-front)"/>
+      <path d="M0 860 C 220 700, 520 610, 860 640 C 1150 665, 1380 760, 1600 820 L1600 1000 L0 1000 Z" fill="#000" filter="url(#grass)"/>
+    </svg>
+
+    <!-- DESKTOP ICONS: data-open="x" opens the window with id="win-x" -->
+    <nav class="icons" aria-label="Desktop">
+      <button class="icon" data-open="welcome"><svg><use href="#i-welcome"/></svg><span>Welcome</span></button>
+      <button class="icon" data-open="about"><svg><use href="#i-about"/></svg><span>About.txt</span></button>
+      <button class="icon" data-open="experience"><svg><use href="#i-exp"/></svg><span>Experience</span></button>
+      <button class="icon" data-open="projects"><svg><use href="#i-projects"/></svg><span>Projects</span></button>
+      <button class="icon" data-open="skills"><svg><use href="#i-skills"/></svg><span>Skills</span></button>
+      <button class="icon" data-open="certs"><svg><use href="#i-certs"/></svg><span>Certifications</span></button>
+      <button class="icon" data-open="contact"><svg><use href="#i-contact"/></svg><span>Contact</span></button>
+      <a class="icon" data-link="resume"><svg><use href="#i-resume"/></svg><span>Resume.pdf</span></a>
+    </nav>
+
+    <!-- ========== WINDOWS ========== -->
+    <!-- The title bar for each window is added by script.js from data-title + data-icon -->
+
+    <!-- WELCOME / HOME -->
+    <section class="window" id="win-welcome" data-title="Welcome" data-icon="i-welcome" data-w="520" hidden>
+      <div class="win-body">
+        <div class="welcome">
+          <svg class="big-icon"><use href="#i-welcome"/></svg>
+          <div>
+            <p class="kicker">Welcome to</p>
+            <h1 class="name">Ariba Shaikh</h1>
+            <p class="tagline">Cybersecurity student · Campus leader · Builder</p>
+          </div>
+        </div>
+        <p>Click the icons on the desktop (or use <strong>Start</strong>) to look around. Every section opens in its own window, so you can drag, stack, and close them.</p>
+        <div class="btn-row">
+          <a class="btn" data-link="github">GitHub</a>
+          <a class="btn" data-link="linkedin">LinkedIn</a>
+          <a class="btn" data-link="resume">Resume</a>
+          <button class="btn" data-open="contact">Contact</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="window" id="win-about" data-title="About.txt - Notepad" data-icon="i-about" data-w="540" hidden>
+      <div class="win-body notepad">
+        <p><strong>Hi, I'm Ariba.</strong></p>
+        <p>I'm a cybersecurity student at SUNY Westchester Community College (A.A.S. in Cybersecurity, expected May 2027) with hands-on experience in technical support, tutoring, and co-authored research, including Python development and presenting findings to a government audience.</p>
+        <p>I explain technical topics in plain language, I've been trusted with club finances as a two-time treasurer, and I'm a certified Westchester County Elections Inspector.</p>
+        <p>Beyond security, I'm drawn to law, intelligence, government, and psychology: anywhere research, strategy, and systems of power meet.</p>
+        <p>Outside class, I build things: gesture-controlled particle systems, music tools, and apps that solve real problems.</p>
+        <p class="dim">Languages: English &amp; Hindi (native / bilingual)</p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & LEADERSHIP -->
+    <section class="window" id="win-experience" data-title="Experience &amp; Leadership" data-icon="i-exp" data-w="620" hidden>
+      <div class="win-body">
+        <h2 class="section-h">Experience</h2>
+
+        <article class="entry">
+          <header><h3>Student Researcher</h3><span class="date">05/2026 – 06/2026</span></header>
+          <p class="org">Mercy University STEM Ready Summer Research Institute · Dobbs Ferry, NY</p>
+          <ul>
+            <li>Co-authored a research project from design through final findings in a competitive summer institute.</li>
+            <li>Wrote Python code for the research analysis and designed hands-on cybersecurity lab exercises.</li>
+            <li>Presented findings to a government audience, turning technical results into practical takeaways.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Cybersecurity Tutor</h3><span class="date">02/2026 – 05/2026</span></header>
+          <p class="org">SUNY Westchester Community College · Valhalla, NY</p>
+          <ul>
+            <li>Guided students through networking, systems, and security fundamentals in one-on-one and group sessions.</li>
+            <li>Helped with hands-on labs, Linux environments, and command-line tasks.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Volunteer Technical Assistant</h3><span class="date">02/2026 – 05/2026</span></header>
+          <p class="org">Cybersecurity Department, SUNY Westchester Community College · Valhalla, NY</p>
+          <ul>
+            <li>Troubleshot hardware, software, and connectivity issues across lab environments.</li>
+            <li>Welcomed Cyber Center visitors and guided them through technical challenges at their own pace.</li>
+            <li>Explained cybersecurity programs to prospective students and supported high school outreach.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Cybersecurity Professional Training Program</h3><span class="date">02/2026 – 05/2026</span></header>
+          <p class="org">Bright Futures Cybersecurity Program, sponsored by Con Edison · Valhalla, NY</p>
+          <ul>
+            <li>Selected for a competitive program on enterprise network security and threat detection.</li>
+            <li>Evaluated real-world incident response strategies with industry professionals.</li>
+            <li>Hands-on firewall implementation, security auditing, and security policy development.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Elections Inspector</h3><span class="date">11/2026</span></header>
+          <p class="org">Westchester County Board of Elections · Westchester County, NY</p>
+          <ul>
+            <li>Completed county training and certification; worked a polling site on Election Day 2026.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Psychology Student Intern</h3><span class="date">06/2024</span></header>
+          <p class="org">MPower, Aditya Birla Education Trust · Pune, India</p>
+          <ul>
+            <li>Trained in behavioral analysis, assessment methods, and applied problem-solving.</li>
+            <li>Built an understanding of human behavior relevant to social engineering awareness.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Volunteer Manager</h3><span class="date">08/2024</span></header>
+          <p class="org">Elpro International School · Pune, India</p>
+          <ul>
+            <li>Planned and ran student activities and coordinated logistics for the college fair.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Animal Shelter Volunteer</h3><span class="date">01/2022 – 05/2025</span></header>
+          <p class="org">Saahas Animal Shelter · Pune, India</p>
+          <ul>
+            <li>Led adoption introductions and matching for about three years.</li>
+            <li>Recruited and scheduled volunteers through local schools and colleges; ran weekly supply inventory.</li>
+          </ul>
+        </article>
+
+        <h2 class="section-h">Leadership &amp; Campus Involvement</h2>
+
+        <article class="entry">
+          <header><h3>Senator &amp; Faculty Liaison</h3><span class="date">02/2026 – 05/2026</span></header>
+          <p class="org">Student Government Association, SUNY WCC · Valhalla, NY</p>
+          <ul>
+            <li>Oversaw student organization recognition and SGA policy compliance.</li>
+            <li>Connected faculty and student leadership; member of the SGA Public Relations Committee.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Treasurer, Women in Cybersecurity (WiCyS)</h3><span class="date">01/2026 – 05/2026</span></header>
+          <p class="org">SUNY Westchester Community College · Valhalla, NY</p>
+          <ul>
+            <li>Managed club funds and presented financial reports to club leadership and student government.</li>
+            <li>Planned multiple events end to end, including the Campus Carnival stall, which grew later-event attendance.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Treasurer, Yonkers Activities Council</h3><span class="date">10/2025 – 12/2025</span></header>
+          <p class="org">SUNY Westchester Community College · Yonkers, NY</p>
+          <ul>
+            <li>Managed event budgets, processed reimbursements, and tracked spending.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <header><h3>Competitor, NCAE Cyber Games</h3><span class="date">2026</span></header>
+          <p class="org">Virtual</p>
+          <ul>
+            <li>Represented SUNY WCC in a national collegiate cybersecurity competition.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="window" id="win-projects" data-title="C:\Ariba\Projects" data-icon="i-projects" data-w="620" hidden>
+      <div class="address"><span>Address</span><div class="field">C:\Ariba\Projects</div></div>
+      <div class="win-body">
+        <h2 class="section-h">Professional</h2>
+        <article class="proj">
+          <svg class="proj-icon"><use href="#i-shield"/></svg>
+          <div>
+            <h3>Safe Haven <span class="pill wip">In progress</span></h3>
+            <p>A campus safety platform with separate dashboards for campus security, administrators, and the campus community. Students, faculty, and staff can file incident tickets with location, time, and details, and an SOS mode records video, alerts campus security, and shares location with responders. Built to be configured per campus, so one platform can serve many schools.</p>
+            <div class="tags"><span>Role-based access</span><span>Incident ticketing</span><span>Emergency response</span></div>
+          </div>
+        </article>
+
+        <h2 class="section-h">Fun</h2>
+        <article class="proj">
+          <svg class="proj-icon"><use href="#i-spark"/></svg>
+          <div>
+            <h3>Conjure <span class="pill done">Completed</span></h3>
+            <p>An interactive browser experience where about 3,000 particles follow and react to my hand gestures, tracked live through the webcam.</p>
+            <div class="tags"><span>Hand tracking</span><span>Particle system</span><span>Browser</span></div>
+            <a class="link" data-link="conjure">View on GitHub →</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <svg class="proj-icon"><use href="#i-note"/></svg>
+          <div>
+            <h3>Logic Pro MCP <span class="pill done">Completed</span> <span class="pill improving">Actively improving</span></h3>
+            <p>My own MCP server that lets Claude control Logic Pro: playing and writing MIDI, transport controls, track setup, and the mixer. Built in stages and still being extended.</p>
+            <div class="tags"><span>MCP</span><span>AI tooling</span><span>Music production</span></div>
+            <a class="link" data-link="logicpro">View on GitHub →</a>
+          </div>
+        </article>
+      </div>
+      <div class="statusbar"><span>3 object(s)</span><span>My Computer</span></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="window" id="win-skills" data-title="Skills - System Properties" data-icon="i-skills" data-w="560" hidden>
+      <div class="win-body face">
+        <fieldset><legend>Security &amp; Networking</legend>
+          <div class="chips"><span>Wireshark</span><span>Nmap</span><span>Firewall implementation</span><span>Security auditing</span><span>Incident reporting</span><span>Vulnerability identification</span></div>
+        </fieldset>
+        <fieldset><legend>IT Infrastructure</legend>
+          <div class="chips"><span>Active Directory (AD DS)</span><span>Group Policy</span><span>Workstations &amp; servers</span><span>Routers, switches &amp; network appliances</span></div>
+        </fieldset>
+        <fieldset><legend>Programming &amp; Scripting</legend>
+          <div class="chips"><span>Python</span><span>PowerShell</span><span>Bash</span><span>Visual Basic</span></div>
+        </fieldset>
+        <fieldset><legend>Operating Systems &amp; Virtualization</legend>
+          <div class="chips"><span>Windows 10/11</span><span>Windows Server</span><span>Kali Linux</span><span>macOS</span><span>VMware Workstation</span><span>VirtualBox</span></div>
+        </fieldset>
+        <fieldset><legend>AI Tools</legend>
+          <div class="chips"><span>Claude</span><span>ChatGPT</span><span>Gemini</span></div>
+        </fieldset>
+        <fieldset><legend>Leadership &amp; Coordination</legend>
+          <div class="chips"><span>Budget management</span><span>Event planning</span><span>Volunteer scheduling</span><span>Cross-functional collaboration</span></div>
+        </fieldset>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="window" id="win-certs" data-title="Certifications" data-icon="i-certs" data-w="500" hidden>
+      <div class="win-body">
+        <ul class="cert-list">
+          <li><svg><use href="#i-cert-doc"/></svg><div><strong>Introduction to Cybersecurity</strong><span>Cisco Networking Academy · 10/2025</span></div></li>
+          <li><svg><use href="#i-cert-doc"/></svg><div><strong>Introduction to Modern AI</strong><span>Cisco Networking Academy · 10/2025</span></div></li>
+          <li><svg><use href="#i-cert-doc"/></svg><div><strong>AI on AMD</strong><span>Course certificate · 11/2026</span></div></li>
+          <li><svg><use href="#i-cert-doc"/></svg><div><strong>Elections Inspector</strong><span>Westchester County, NY · 2026</span></div></li>
+          <li class="pending"><svg><use href="#i-cert-doc"/></svg><div><strong>CompTIA Security+</strong><span>In progress</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="window" id="win-contact" data-title="Contact" data-icon="i-contact" data-w="440" hidden>
+      <div class="win-body face">
+        <p>Want to talk security, projects, or opportunities? Reach me here:</p>
+        <div class="contact-row"><label>Email:</label><div class="field" id="email-text">shaikh.ariiiba@gmail.com</div><button class="btn" id="copy-email">Copy</button></div>
+        <div class="contact-row"><label>LinkedIn:</label><a class="field link" data-link="linkedin">linkedin.com/in/ariba-shaikh</a></div>
+        <div class="contact-row"><label>GitHub:</label><a class="field link" data-link="github">github.com/aribashaikhhh</a></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- START MENU -->
+  <div id="start-menu" hidden>
+    <div class="sm-head"><span class="avatar"><svg><use href="#i-welcome"/></svg></span>Ariba Shaikh</div>
+    <ul>
+      <li><button data-open="welcome"><svg><use href="#i-welcome"/></svg>Welcome</button></li>
+      <li><button data-open="about"><svg><use href="#i-about"/></svg>About</button></li>
+      <li><button data-open="experience"><svg><use href="#i-exp"/></svg>Experience &amp; Leadership</button></li>
+      <li><button data-open="projects"><svg><use href="#i-projects"/></svg>Projects</button></li>
+      <li><button data-open="skills"><svg><use href="#i-skills"/></svg>Skills</button></li>
+      <li><button data-open="certs"><svg><use href="#i-certs"/></svg>Certifications</button></li>
+      <li class="sep"></li>
+      <li><button data-open="contact"><svg><use href="#i-contact"/></svg>Contact</button></li>
+      <li><a data-link="resume"><svg><use href="#i-resume"/></svg>Resume.pdf</a></li>
+    </ul>
+    <div class="sm-foot"></div>
+  </div>
+
+  <!-- TASKBAR -->
+  <footer id="taskbar">
+    <button id="start-btn" aria-haspopup="true" aria-expanded="false"><svg><use href="#i-welcome"/></svg>start</button>
+    <div id="tasks"></div>
+    <div id="tray"><span id="clock"></span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
